@@ -14,6 +14,8 @@ import shareIcon from '/src/assets/icons/shareIcon.png'
 import qrIcon from '/src/assets/icons/qrIcon.png'
 import deleteIcon from '/src/assets/icons/deleteIcon.png'
 
+import QRCode from 'qrcodejs';
+
 function MiniCardPopUp(props) {
 
     const navigateTo = useNavigate()
@@ -60,6 +62,7 @@ function MiniCardPopUp(props) {
         setSelectedCard({active:false})
     }
 
+
   
     return ( 
         <div className={`${styles.miniCardPopUp} ${isActive === true && styles.active}`}>
@@ -92,17 +95,17 @@ function MiniCardPopUp(props) {
                     <h1>Share Card</h1> 
                     <p>Share your card</p>
                 </button>
-                <button>
+                <button onClick={deleteCard}>
                     
-                    <img src={qrIcon}/>
-                    <h1>Create QR</h1> 
-                    <p>Create a QR code for your card</p>
+                    <img src={deleteIcon}/>
+                    <h1>Delete Card</h1> 
+                    <p>Delete your card premanently</p>
 
                 </button>
             </section>
 
 
-                <button onClick={deleteCard} className={styles.deleteCardBtn}><img src={deleteIcon}/>Delete Card</button>
+                {/* <button onClick={deleteCard} className={styles.deleteCardBtn}><img src={deleteIcon}/>Delete Card</button> */}
 
 
 
